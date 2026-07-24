@@ -19,6 +19,11 @@ pbsbench-prepare-data \
   --output data/images
 ```
 
+> [!NOTE]
+> The default configs expect `data/images`. If you use a different
+> `--output`, override `data.image_root` during training or pass
+> `--image-root` during cell evaluation.
+
 The annotations store the original slide filename, `512 × 512` patch origin, curated Cellpose-SAM object index, and bounding box. The command reads the region directly from the WSI and reproduces the contextual `224 × 224` cell crop used during QA curation. It also saves the corresponding patch and symlinks slide-level images. Use `--link-mode copy` if symlinks are unsuitable.
 
 OOD records refer to images distributed by their source datasets. Provide one root for every source named in the selected annotations, for example:

@@ -94,6 +94,11 @@ pbsbench-prepare-data \
   --output data/images
 ```
 
+> [!NOTE]
+> The default configs expect `data/images`. If you use a different
+> `--output`, override `data.image_root` during training or pass
+> `--image-root` during cell evaluation.
+
 Every QA record contains a dataset-native `source` locator. The command extracts each curated cell from its original WSI and writes the exact relative `image_path` consumed by the dataset loader. See [data/README.md](data/README.md) for the ID contract and OOD sources.
 
 See [docs/PREPROCESSING.md](docs/PREPROCESSING.md).
