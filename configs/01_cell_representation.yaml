@@ -1,0 +1,20 @@
+stage: cell_representation
+model:
+  vision_model: dinobloom_vitl14
+  vision_weights: weights/pytorch_model_l.bin
+  vision_embed_dim: 1024
+  blip2_model_type: pretrain_vitL
+  num_query_tokens: 32
+  freeze_vision: true
+data:
+  annotations: data/PBSInstr/cell_captions.jsonl
+  image_root: data/images
+training:
+  output_dir: checkpoints/cell_representation
+  epochs: 100
+  batch_size: 32
+  learning_rate: 5.0e-5
+  weight_decay: 0.01
+  warmup_ratio: 0.1
+  scheduler: cosine
+  seed: 42

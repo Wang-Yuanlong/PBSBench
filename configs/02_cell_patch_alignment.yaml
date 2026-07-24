@@ -1,0 +1,27 @@
+stage: cell_patch_alignment
+model:
+  vision_model: dinobloom_vitl14
+  vision_weights: weights/pytorch_model_l.bin
+  vision_embed_dim: 1024
+  num_query_tokens: 32
+  patch_hidden_size: 768
+  patch_depth: 2
+  patch_heads: 8
+  projection_dim: 256
+  global_loss_weight: 1.0
+  local_loss_weight: 0.5
+  cell_checkpoint: checkpoints/cell_representation
+  freeze_vision: true
+  freeze_cell_encoder: true
+data:
+  annotations: data/PBSInstr/cell_captions.jsonl
+  image_root: data/images
+training:
+  output_dir: checkpoints/cell_patch_alignment
+  epochs: 100
+  batch_size: 32
+  learning_rate: 5.0e-5
+  weight_decay: 0.01
+  warmup_ratio: 0.1
+  scheduler: cosine
+  seed: 42

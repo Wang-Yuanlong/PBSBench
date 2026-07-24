@@ -1,0 +1,18 @@
+PBSInstr and PBSBench Annotation License
+
+Copyright (c) 2026 The PBSBench Authors
+
+The curated question-answer annotations and associated metadata in
+`data/PBSInstr/` and `data/PBSBench/` are licensed under the Creative Commons
+Attribution 4.0 International License (CC BY 4.0):
+
+https://creativecommons.org/licenses/by/4.0/
+
+When sharing or adapting this material, provide appropriate credit to the
+PBSBench Authors, link to the license, and indicate whether changes were made.
+Please also cite the PBSBench paper as described in the repository README.
+
+This license applies only to the curated question-answer annotations and their
+associated metadata. It does not apply to source microscopy images, third-party
+software, model checkpoints, or other externally obtained assets. Those
+materials remain subject to their respective terms.

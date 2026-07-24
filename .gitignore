@@ -1,0 +1,37 @@
+resources/
+
+# Local tests and generated outputs
+.test/
+test-local/
+outputs/
+checkpoints/
+logs/
+predictions/
+wandb/
+weights/
+
+# Python build/cache
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.venv/
+*.egg-info/
+dist/
+build/
+
+# Data not intended for Git
+data/raw/
+data/images/
+data/private/
+
+# Credentials and machine-local configuration
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+*credentials*
+*secret*
+*token*

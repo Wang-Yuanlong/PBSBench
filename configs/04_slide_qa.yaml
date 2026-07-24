@@ -1,0 +1,22 @@
+stage: slide_qa
+model:
+  language_model: Qwen/Qwen2.5-VL-7B-Instruct
+  num_query_tokens: 32
+  feature_dim: 768
+  freeze_language_model: true
+  load_in_4bit: false
+data:
+  annotations: data/PBSInstr/slide_train.jsonl
+  val_annotations: data/PBSInstr/slide_val.jsonl
+  feature_root: data/processed/patch_features
+  max_patches: 2048
+training:
+  output_dir: checkpoints/slide_qa
+  epochs: 50
+  batch_size: 2
+  eval_batch_size: 2
+  learning_rate: 5.0e-5
+  weight_decay: 0.01
+  warmup_ratio: 0.1
+  scheduler: cosine
+  seed: 42

@@ -1,0 +1,4 @@
+# End-to-end training, image materialization, and paper-metric evaluation.
+# Install OpenSlide and openslide-python through Conda as documented in README.
+-e .
+sentence-transformers>=3.0

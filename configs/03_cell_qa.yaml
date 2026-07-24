@@ -1,0 +1,25 @@
+stage: cell_qa
+model:
+  vision_model: dinobloom_vitl14
+  vision_weights: weights/pytorch_model_l.bin
+  vision_embed_dim: 1024
+  language_model: Qwen/Qwen2.5-VL-7B-Instruct
+  num_query_tokens: 32
+  cell_checkpoint: checkpoints/cell_representation
+  freeze_vision: true
+  freeze_language_model: true
+  load_in_4bit: false
+data:
+  annotations: data/PBSInstr/cell_train.jsonl
+  val_annotations: data/PBSInstr/cell_val.jsonl
+  image_root: data/images
+training:
+  output_dir: checkpoints/cell_qa
+  epochs: 20
+  batch_size: 2
+  eval_batch_size: 2
+  learning_rate: 5.0e-5
+  weight_decay: 0.01
+  warmup_ratio: 0.1
+  scheduler: cosine
+  seed: 42
